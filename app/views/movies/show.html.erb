@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+<h2> Movie Details </h2>
+
+<div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+  <div class="col-md-6 px-0">
+    <h1 class="display-4 font-italic"> 
+       <%= @movie.title %>
+    </h1>
+    <p class="lead my-3"> 
+      <%= @movie.description %>    
+    </p>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %>
+
+
+<div class="my-3 p-3 bg-white rounded box-shadow">
+  <h6 class="border-bottom border-gray pb-2 mb-0">Movie Comments</h6>
+  <div id="comments">
+    <%= render @movie.comments %>
+  </div>
+</div>
+
+<%= link_to "Add new comment", new_movie_comment_path(@movie) %> 

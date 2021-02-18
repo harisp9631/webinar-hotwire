@@ -1,4 +1,5 @@
 <h1>New Comment</h1>
 
-<%= render 'form', comment: @comment %>
-
+<%= turbo_frame_tag 'new_message', target: '_top' do %>
+  <%= render 'form', comment: @comment %>
+<% end %>

@@ -26,6 +26,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
+        format.turbo_stream {}
         format.html { redirect_to @comment.movie, notice: "Comment was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }

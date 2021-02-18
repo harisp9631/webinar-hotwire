@@ -1,5 +1,5 @@
 <div class="m-2">
-  <%= form_with(model: [comment.movie, comment], local: true, class: "form-inline") do |form| %>
+  <%= form_with(model: [comment.movie, comment], local: true, class: "form-inline", data: { controller: 'reset-form', action: 'turbo:submit-end->reset-form#reset'}) do |form| %>
   <% if comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
